@@ -1,0 +1,304 @@
+// DanishBits.org - Modern design
+
+/*! minireset.css v0.0.2 | MIT License | github.com/jgthms/minireset.css */
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+
+/*
+ * Custom reset
+ */
+
+body #header,
+body #content{
+  min-width: 300px;
+  max-width: 100%;
+}
+
+body #menu {
+  min-width: auto;
+}
+
+
+/*
+ * Variables
+ */
+
+$base: #373737; // Grey
+$primary-color: #04578A; // Blue
+$text-color-head: #FFFFFF; // White
+$text-color: #343838; // near-black
+$text-color-subtle: lighten($text-color, 50%);
+
+$content-background-color: #EFEAE4; // near-white
+$font: Tahoma, Verdana, sans-serif;
+
+$breakpoint-tablet-portrait: 768px;
+$breakpoint-tablet-landscape: 992px;
+
+/*
+ * Base structure
+ */
+
+html,
+body,
+#wrapper {
+  width:100%;
+  height:auto;
+  margin:0;
+  padding:0;
+  font-family: $font;
+  box-sizing:border-box;
+}
+
+body {
+  background-color: $base;
+}
+
+
+/*
+ * Header
+ */
+
+#header {
+  height: 80px;
+  margin-top: 25px;
+  background-color: $primary-color;
+  padding-left:30px;
+  padding-right:30px;
+}
+
+#logocenter {
+  float:left;
+}
+
+#linkroot {
+  display: block;
+  height: 100px;
+  width: 140px;
+  background-image: url("https://dl.dropboxusercontent.com/s/kzu1zzbmvpnarm5/DB%20Logo%20Modern%404x.png?dl=0");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: -20px;
+}
+
+#linktorrent {
+  display:none;
+}
+@media (min-width:992px){
+  #linktorrent {
+      position: absolute;
+      height: 90px;
+      width: 290px;
+      background-size: contain;
+      background-position: center center;
+      display: block;
+      top: 15px;
+      right: 30px;
+  }
+}
+
+#searchbars,
+#userinfo {
+  display:none;
+}
+
+
+/*
+ * Menu
+ */
+
+#menu {
+  height:100%;
+  float:left;
+  display:block;
+
+  ul {
+    height:100%;
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul li {
+    height:100%;
+    float:left;
+    margin-left:10px;
+  }
+
+  ul li:hover {
+    background-color:lighten($primary-color, 5%);
+  }
+
+  ul li:first-child {
+    margin-left:0;
+  }
+
+  ul li a {
+    color:#FFF;
+    text-decoration: none;
+    line-height: 80px;
+    height:100%;
+    display:block;
+    padding-left:5px;
+    padding-right:5px;
+  }
+}
+
+#index #nav_index,
+#torrents #nav_torrents,
+#movieindex #nav_movieindex,
+#requests #nav_requests,
+#forums #nav_forums,
+#helpdesk #nav_helpdesk,
+#irc #nav_irc,
+#top10 #nav_top10,
+#bonus #nav_bonus {
+  background-color:lighten($primary-color, 5%);
+}
+
+
+/*
+ * Content
+ */
+
+#content {
+  padding-left:30px;
+  padding-right:30px;
+  margin-bottom: 30px;
+
+  .thin::after {
+    content: " ";
+    clear:both;
+    display:table;
+  }
+
+  .thin > center:first-child {
+    display:block;
+    position: absolute;
+    top:0;
+    line-height: 25px;
+    color:$text-color-subtle;
+    width:100%;
+    a {
+      color:$text-color-head;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .sidebar {
+    float:right;
+    clear:none;
+    width: 25%;
+    padding-left:15px;
+  }
+
+  @media (max-width:991px) {
+    .thin .sidebar {
+      width: 40%;
+    }
+    .thin .main_column {
+      width: 60%;
+    }
+  }
+
+  .main_column {
+    float:left;
+    clear:none;
+    width: 75%;
+    padding-right:15px;
+  }
+}
+
+/*
+ * Box
+ */
+
+.box {
+  .head {
+    background-color: $primary-color;
+    padding:10px 15px;
+    font-size:18px;
+    color:$text-color-head;
+    height:42px;
+    
+    .time {
+      color: $text-color-subtle;
+      font-size: 12px;
+      position: relative;
+      top: 23px;
+      left: 0;
+      display: block;
+    }
+  }
+
+  .forum_index,
+  .pad {
+    background-color: $content-background-color;
+    padding:15px;
+    padding-top: 30px;
+  }
+
+}
+
+.newspage {
+  margin-bottom:30px;
+}
+
+
+/*
+ * Footer
+ */
+
+#disclaimer_container {
+  max-width: 100%;
+  min-width: 100%;
+  color: $text-color-subtle;
+}
+
+#footer {
+  color: $text-color-subtle;
+  text-align: center;
+  padding-bottom:15px;
+  max-width: 100%;
+  background-color:darken($base, 10%);
+  a {
+    color: $text-color-subtle;
+    text-decoration: underline;
+  }
+  a:hover {
+    color: $text-color-head;
+  }
+}
+
+
+/*
+ * Extra divs
+ */
+/*
+@media all and (min-width: $breakpoint-tablet-portrait) {
+  #extra1 {
+    border-right:1px solid lighten($base, 20%);
+    content:" ";
+    position:absolute;
+    height:100%;
+    top:120px;
+  }
+}
+
+@media all and (min-width: $breakpoint-tablet-portrait) and (max-width: $breakpoint-tablet-landscape) {
+  #extra1 {
+    right:calc(unquote("25% + 7.5px"));
+  }
+}
+
+@media all and (min-width: $breakpoint-tablet-landscape) {
+  #extra1 {
+    right:calc(unquote("40% + 7.5px"));
+  }
+}
+*/
